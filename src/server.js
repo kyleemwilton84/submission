@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
 import fetch from 'node-fetch';
-import { FormData, Blob } from 'node:buffer';
+import { FormData, Blob } from 'undici';
 import dotenv from 'dotenv';
 
 dotenv.config();
