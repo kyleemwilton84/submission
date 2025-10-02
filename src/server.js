@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
 import fetch from 'node-fetch';
-import { FormData, Blob } from 'undici';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -55,7 +54,7 @@ app.post(
       // 🔗 Forward files to Cloudways PHP endpoint
       const CLOUDWAYS_URL = 'https://asterclaim.io/api/upload.php'; // ⬅️ Replace with your actual Cloudways URL
 
-      const formData = new FormData();
+      const formData = new globalThis.FormData();
       formData.append('full_name', full_name);
       formData.append('email', email);
       formData.append('business_name', business_name || '');
@@ -65,13 +64,13 @@ app.post(
       // 🗂️ Attach files
      formData.append(
       'business_docs',
-      new Blob([files.business_docs[0].buffer], { type: files.business_docs[0].mimetype }),
+      new globalThis.Blob([files.business_docs[0].buffer], { type: files.business_docs[0].mimetype }),
       files.business_docs[0].originalname
       );
-    
+      
       formData.append(
         'id_file',
-        new Blob([files.id_file[0].buffer], { type: files.id_file[0].mimetype }),
+        new globalThis.Blob([files.id_file[0].buffer], { type: files.id_file[0].mimetype }),
         files.id_file[0].originalname
       );
 
