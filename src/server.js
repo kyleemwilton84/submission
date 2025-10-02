@@ -61,16 +61,17 @@ app.post(
       formData.append('business_name', business_name || '');
       formData.append('business_doc_type', business_doc_type);
       formData.append('id_doc_type', id_doc_type);
-
+      
       // 🗂️ Attach files
-      formData.append(
-        'business_docs',
-        files.business_docs[0].buffer,
-        files.business_docs[0].originalname
+     formData.append(
+      'business_docs',
+      new Blob([files.business_docs[0].buffer], { type: files.business_docs[0].mimetype }),
+      files.business_docs[0].originalname
       );
+    
       formData.append(
         'id_file',
-        files.id_file[0].buffer,
+        new Blob([files.id_file[0].buffer], { type: files.id_file[0].mimetype }),
         files.id_file[0].originalname
       );
 
